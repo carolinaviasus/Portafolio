@@ -18,12 +18,12 @@ h2{
     color: #FFFFFF;
 }
 
-p{
+p .texto_p{
     font-style: italic;
     font-weight: 300;
     font-size: 20px;
     line-height: 30px;
-    text-align: justify;
+    /* text-align: justify; */
 
     color: #FFFFFF;
 }
