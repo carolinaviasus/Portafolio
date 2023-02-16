@@ -6,3 +6,4 @@ def home(request):
     ##retorn bd
     projects = Project.objects.all()
     return render(request, 'home.html', {'projects': projects})
+

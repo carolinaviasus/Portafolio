@@ -1,18 +1,69 @@
 {% extends 'layout.html' %}
 
+
     {% block content %}
 
-    <h1>Home </h1>
+    <!-- traer etiquetastatic -->
+    {% load static %}
 
-        {% for project in projects %}
+    <br>
+    
+    
+<link rel="stylesheet" href="{% static 'style.css' %}">
 
-        <h2> {{project.title}}</h2>
-        <p>{{project.description}}</p>
-        <img src="{{project.image.url}}" alt="{{project.title}}">
+    <div class="container_h ">
+        <div class="colum_o">
+            <img src="{% static 'portfolio/foto.svg' %}">
 
-        {% if project.url %}
-        <a href="{{project.url}}">{{project.url}}</a>
-        {% endif %}
+        </div>
+
+        <div class="colum_t">
+            <h1>Hola, soy</h1>
+            <h1><span>Carolina </span> Viasus</h1>
+            
+            <p> Full_stack_devoleper </p>
+            <a class="button " href="{% static 'portfolio/Cv.pdf' %}" target="_blank">Obtener CV</a>
+
+        </div>
+    </div>
+
+<!-- PROYECTOS -->
+<link rel="stylesheet" href="{% static 'project.css' %}">
+
+<div id="proyectos" class="container_p">
+    <h3> Mis Proyectos </h3>
+    <br>
+    {% for project in projects %}
+
+    <div class="card mb-3" style="background: #202020;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid">
+        </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                <h2> {{project.title}}</h2>
+                <p>{{project.description}}</p>
+                {% if project.url %}
+                
+
+                <a class="button " href="{{project.url}}" target="_blank" >Visualizar</a>
+                {% endif %}        </div>
+          </div>
+        </div>
+      </div>
+    
+    
 
     {% endfor %}
 {% endblock %}
+</div>
+
+ 
+
+
+
+       
