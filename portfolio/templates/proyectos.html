@@ -1,34 +1,31 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'project.css' %}">
 
-<div id="proyectos" class="container_p p-4">
-    <h3> Mis Proyectos </h3>
-    <br>
-    {% for project in projects %}
-
-    <div class="card mb-3" style="background: #202020;
-    border: 1px solid #FFFFFF;
+<div id="proyectos" class="container_p">
+  <h3> Mis Proyectos </h3>
+  <br>
+  <div id="project_cen">
+  {% for project in projects %}
+  
+    <div id="project_cen" class="card mb-3" style="background: #202020; 
+    border: 1px solid #FFFFFF; max-width: 1000px; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid">
         </div>
-          <div class="col-md-8">
-            <div class="card-body">
-                <h2> {{project.title}}</h2>
-                <p class="texto_p">{{project.description}}</p>
-                {% if project.url %}
-                
-
-                <a class="button " href="{{project.url}}" target="_blank" >Visualizar</a>
-                {% endif %}        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2> {{project.title}}</h2>
+            <p class="texto_project">{{project.description}}</p>
+            {% if project.url %}
+            <a class="button " href="{{project.url}}" target="_blank">Visualizar</a>
+            {% endif %}
           </div>
         </div>
       </div>
-    
-    
-
+    </div> 
     {% endfor %}
-
+  </div>
 </div>

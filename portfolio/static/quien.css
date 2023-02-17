@@ -1,0 +1,36 @@
+h3{
+    padding: 25px;
+    
+    background: linear-gradient(207deg,#dfb3aa,#19191b,#45458c,#373742,#312b4a,#17151f,#3c3c3e);
+    background-size: 420% 420%;
+    animation: gradient-animation 63s ease infinite;
+   
+    border-radius: 1px;
+    text-align: center;
+    color: #08E0FD;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 60px;
+}
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+#quien_{
+  display: flex;
+  justify-content: center;
+}
+
+.imagenu{
+  display: flex;
+  align-items: center;
+}
+
