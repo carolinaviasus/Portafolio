@@ -17,29 +17,43 @@
             <div> <img src="/media/portfolio/images/contacto.png" alt="contacto" class="img-fluid" height="200px" width="200px"></div>
             <h2 class="fs-1" style="color: black; font-weight: 700;"> Contactame</h2>
         </div>
-        <form action="" >
+        <form name="formulario-contacto" netlify >
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Apellido">             
+                <input type="text" name="nombre" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Apellido">             
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+                <input type="email" name="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" name= "mensaje" id="mensaje_form" rows="3"></textarea>
             </div>
             <div class="footer_b" >
-                <a class="button " href="{% static 'portfolio/Cv.pdf' %}" target="_blank">Enviar</a>
+                <a class="button " id="enviar_correo" type="submit" target="_blank">Enviar</a>
+                
             </div>
             <div class="mb-3">
 
             </div>
         </form>
+        <script>
+         const btnEnvio = document.getElementById('enviar_correo');
+         btnEnvio.addEventListener('click', function(e) {
+                e.preventDefault();
+                const nombre = document.getElementById('exampleFormControlInput1').value;
+                const email = document.getElementById('email').value;
+                const mensaje = document.getElementById('mensaje_form').value;
+                window.location.href= `mailto:carolinaviasus@outlook.com?
+                subject=envio&body=Nombre%3A${nombre}%0ACorreo%3A${email}%0Amensajel%3A${mensaje}`;
+        }); 
+        </script>
     </div>
     
 </section>  
+
+    
 
 <!-- pie de pagina  -->
 <footer class="w-100">
